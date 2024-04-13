@@ -5,19 +5,32 @@ import user from "../../../../assets/user.svg"
 import logo from "../../../../assets/logo.svg"
 import './Navbar.css'
 
-
-
 export default function Navbar() {
+    const [showMenu, setShowMenu] = useState(false)
+
+    function handleClick() {
+       setShowMenu(!showMenu)
+    }
+    
+
+
+
+
+
     return (
         <nav>
             <a href="#" className="nav-ico">
                 <img src={logo} alt="go to home" />
             </a>
             <div className="mainNavlinks">
-                <button  className="BurgerToggle">
-                    <img src={burger} alt="ouverture du menu" />
+                <button
+                    onClick={() => handleClick()}
+                    className="BurgerToggle">
+                    <img 
+                    src={showMenu ? close : burger} alt="ouverture du menu" />
                 </button>
-                <div className="NavLinks">
+
+                <div className={`${showMenu ? "open" : ""}   NavLinks`}>
 
                     <a href="#">home</a>
                     <a href="#">contact</a>

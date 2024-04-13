@@ -8,6 +8,7 @@ nav {
     padding-inline: 15px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.308);
     background-color: #faf9ee;
+    
 }
 
 .nav-ico img {
@@ -27,7 +28,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  ;
+    z-index: 10;
   
     width: 100%;
 }
@@ -97,12 +98,18 @@ nav {
         background: #f7e1b3d5;
         top: 100%;
         left: 0;
-        height: 30vh;
+        height: 50vh;
         width: 100%;
         border-right: 1px solid #c5c5c6;
         padding:15px 50px 15px 20px;
-        transform: translate(-100%);
-        transform: 0.3s ease-out;
+        transform: translateY(-300%);
+        transition: transform 0.3s ease-out;
+        z-index: -10;
+       
+    }
+
+    .open {
+        transform: translateY(0%)
     }
     
  }
